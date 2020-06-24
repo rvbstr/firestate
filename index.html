@@ -11,8 +11,16 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Fire State" startnode="25" creator="Twine" creator-version="2.3.8" ifid="12A78278-B4CB-40F1-AA2B-B53F1385C907" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+<tw-storydata name="Fire State" startnode="1" creator="Twine" creator-version="2.3.8" ifid="12A78278-B4CB-40F1-AA2B-B53F1385C907" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*fonts*/
 
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+
+tw-story{
+font-family: 'Stalinist One', cursive;
+}
+
+
+/*hide audio controls*/
 
 #audio-controls{ display:none; }
 
@@ -21,16 +29,26 @@ tw-story.no-navigation tw-sidebar {
 }
 
 
+/*change backrounds by tags*/
+
 tw-story[tags~="test"] {
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/dc/%D0%A0%D0%B0%D0%B7%D0%BD%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D0%B5_%D1%81%D0%B5%D0%BC%D1%8F%D0%BD.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
   	background-position: center;
 }
+/*
 tw-story[tags~="rain"] {
 	background-image: url("https://rutvet.ru/sites/default/files/inline/images/kakie-dozhdi-nazyvayut-gribnymi_4.jpg");
 	background-repeat: repeat;
 	background-size: ;
+  	background-position: center;
+}*/
+
+tw-story[tags~="seedvault"] {
+	background-image: url("https://raw.githubusercontent.com/rvbstr/firestate/master/img/Screenshot%202020-06-23%20at%2023.30.47.png");
+	background-repeat: no-repeat;
+	background-size: cover;
   	background-position: center;
 }
 
@@ -49,31 +67,126 @@ tw-story[tags~="fire"] {
 }
 
 
+/*show textured text by id*/
+
+/*
 .container{          
-  background:
- url('https://st.depositphotos.com/1092019/3202/i/950/depositphotos_32028053-stock-photo-seamless-texture-of-brown-soil.jpg')  
-    no-repeat center center;
+  background-color: white;
   background-size:100%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   font-size: 50px
+}*/
+
+.containerseed{          
+  background:
+ url('https://i.makeagif.com/media/3-18-2015/a4PrQY.gif')  
+    no-repeat center center;
+  background-size:100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 
-
-tw-story{
-font-family: 'Stalinist One', cursive;
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index:0;
 }
 
+#myimage {
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index:1;
+}
+
+#textov {
+  z-index:2;
+}
+
+/*input styles*/
+
+input[type=text] {
+  
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid white;
+  border-radius: 1px;
+  background:
+ url('https://thumbs.gfycat.com/WanObedientFawn-size_restricted.gif')
+	color: white;
+  font-family: 'Stalinist One', cursive;
+}
+
+button {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 9px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Stalinist One', cursive;
+}
+button:hover {
+  background-color: black; /* Green */
+  border: none;
+  color:black;
+  	text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px         #F90, 0px -20px 40px #C33;
+  padding: 9px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Stalinist One', cursive;
+}
+button:focus {
+  background-color: black; /* Green */
+  border: none;
+  color:white;
+  	text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px         #F90, 0px -20px 40px #C33;
+  padding: 9px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Stalinist One', cursive;
+}
+
+
+//hover style for all the fucking links
 
 a:hover {
   color:black;
   	text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px         #F90, 0px -20px 40px #C33;
 }
 
+a {text-decoration: none;
+color: #4169E1;}
+
+a:visited {
+ text-decoration:none; 
+ 
+}
+
 
 tw-expression tw-link {
+}
+
+a:hover
+{
+  color:black;
+  text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px         #F90, 0px -20px 40px #C33;
 }
 
 tw-link:hover
@@ -105,16 +218,10 @@ tw-expression tw-link:hover {
 
 
 
-#myVideo {
-  position: fixed;
-  z-index:-3;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
 
 
+
+/*show floating containers*/
 
 .center {
   display: block;
@@ -122,7 +229,6 @@ tw-expression tw-link:hover {
   margin-right: auto;
   width: 50%;
 }
-
 
 .object {
   animation: float 6s ease-in-out infinite;
@@ -147,6 +253,9 @@ tw-expression tw-link:hover {
 }
 
 
+
+
+
 /**
  * Harlowe Audio Library (HAL), by Chapel, v2.2.1
  * for Harlowe 2.1.0 and higher
@@ -166,9 +275,14 @@ if (typeof window.CustomScripts == "undefined") {
 			var value = $("input[name='" + inputName + "']")[0].value;
 			// Update the variable.
 			State.variables[inputName] = value;
+			//Find the hook node based on name and set the text inside
+      $("tw-hook[name*='" + inputName + "']").text(value);
 		}
 	};
 };
+
+
+$('tw-story').addClass('no-navigation')
 
 
 
@@ -186,44 +300,69 @@ if (typeof window.CustomScripts == "undefined") {
 (click: &quot;Солнечная система&quot;)[&lt;iframe src=&quot;https://www.solarsystemscope.com/iframe&quot; width=&quot;500&quot; height=&quot;400&quot; style=&quot;min-width:800px; min-height: 400px; border: 2px solid #0f5c6e;&quot;&gt;&lt;/iframe&gt;]
 
 
-В моей ладони лежит зерно.
-(click: &quot;зерно.&quot;)[Я фотографирую его.]
+(set: $fname to &quot;&quot;)
+Я нашла ЗЕРНО.
+(click: &quot;ЗЕРНО.&quot;)[Оно лежит в моей ладони.]
+Я назову его []&lt;fname|
+&lt;input type=&quot;text&quot; name=&quot;fname&quot; value=&quot;John Appleseed&quot;&gt;&lt;button type=&quot;submit&quot; onclick=&quot;CustomScripts.updateVariable(&#39;fname&#39;)&quot;&gt;Save value to variable&lt;/button&gt;
+
+
+
 Все зерна мира образуют [[множество зерен]]. Я обращаю внимание на [[одно из них]]. Рациональное зерно, зерно истины?
 
-</tw-passagedata><tw-passagedata pid="2" name="множество зерен" tags="" position="600,500" size="100,100">&lt;iframe src=&quot;https://en.wiktionary.org/wiki/seed#Englishv&quot; width=&quot;100%&quot; height=&quot;600px&quot;&gt;&lt;/iframe&gt;
+</tw-passagedata><tw-passagedata pid="2" name="множество зерен" tags="" position="600,500" size="100,100">
+&lt;p class=&quot;containerseed&quot;&gt;
+([[COUNTABLE|Start]], agriculture) Any propagative portion of a plant which may be sown, such as true seeds, seed-like fruits, tubers, or bulbs.
 
-Идея зерна. Какого-то?</tw-passagedata><tw-passagedata pid="3" name="одно из них" tags="" position="900,500" size="100,100">&lt;img src=&quot;https://vignette.wikia.nocookie.net/harrypotter/images/2/28/Fire_seed3.png/revision/latest/top-crop/width/360/height/450?cb=20130514220122&quot; class=&quot;center object&quot; style=&quot; width:20%&quot;&gt;
+([[UNCOUNTABLE|одно из них]], collective) An amount of seeds that cannot be readily counted.
+	&lt;i&gt;The entire field was covered with geese eating the freshly sown seed.&lt;/i&gt;
+&lt;/p&gt;
+
+</tw-passagedata><tw-passagedata pid="3" name="одно из них" tags="" position="900,500" size="100,100">&lt;img src=&quot;https://vignette.wikia.nocookie.net/harrypotter/images/2/28/Fire_seed3.png/revision/latest/top-crop/width/360/height/450?cb=20130514220122&quot; class=&quot;center object&quot; style=&quot; width:20%&quot;&gt;
 
 &lt;a href=&quot;https://www.nordgen.org/sgsv/index.php?app=data_unit&amp;unit=sgsv&quot; target=&quot;_blank&quot;&gt;Что это за зерно?&lt;/a&gt;
-(set: $fname to &quot;&quot;)
 
-Мое зерно: $fname
-&lt;input type=&quot;text&quot; name=&quot;fname&quot; value=&quot;Johnson&quot;&gt;&lt;button type=&quot;submit&quot; onclick=&quot;CustomScripts.updateVariable(&#39;fname&#39;)&quot;&gt;Save value to variable&lt;/button&gt;
 
 Зерно находится в земле. На [[комфортной]] ему глубине в достаточно увлажненной почве.
 
-Рой глубокие туннели, копи зерно, не стремись к господству над другими.
+&lt;i&gt;Рой глубокие туннели, копи зерно, не стремись к господству над другими.&lt;/i&gt;
+</tw-passagedata><tw-passagedata pid="4" name="комфортной" tags="ground" position="900,700" size="100,100">ЗЕРНО начинает давать всходы — это первый этап органогенеза.
+[[Наблюдаю]].
 
-[[мыслящей материи]]</tw-passagedata><tw-passagedata pid="4" name="комфортной" tags="ground" position="900,700" size="100,100">&lt;p class=&quot;container&quot;&gt;ЗЕРНО начинает давать первые всходы — это первый этап органогенеза. &lt;/p&gt;
+[[Не верю|Наблюдаю]], что все идет так гладко, но метод наблюдения требует не ставить суждение первее взгляда.</tw-passagedata><tw-passagedata pid="5" name="Наблюдаю" tags="" position="775,875" size="100,100">ОНО [[пробилось]] из-под земли и спихнуло комок почвы, чтобы освободить пространство для роста.
 
-[[Наблюдаю]]
-[[Не верю|Наблюдаю]], что все идет так гладко, но метод наблюдения требует не ставить суждение первее взгляда.</tw-passagedata><tw-passagedata pid="5" name="Наблюдаю" tags="" position="800,900" size="100,100">ОНО [[пробилось]] из-под земли и подвинуло комок почвы, чтобы освободить пространство для роста.
+Или это [[последний шаг|дождь]] перед завершением процесса?</tw-passagedata><tw-passagedata pid="6" name="пробилось" tags="rain" position="600,1000" size="100,100">Мое желание или желание ЗЕРНА не всегда могут влиять на обстоятельства, например [[дождь]]. А иногда могут — я теряю терпение и [[давлю|давит]] ЗЕРНО ногой.</tw-passagedata><tw-passagedata pid="7" name="давит" tags="" position="600,1200" size="100,100">&quot;Глубже и глубже и глубже и глубже. Слаще и слаще и слаще и [[слаще|тухнуть]]&quot;.</tw-passagedata><tw-passagedata pid="8" name="дождь" tags="" position="1000,1100" size="100,100">Пошел ливень, ЗЕРНО было затоплено и начало [[тухнуть]]. ОНО было засажено глубоко в землю. Я дуумаю, что ему тепло и спокойно, хотя конец обычно расстраивает.
 
-Или это [[последний шаг|дождь]] перед завершением процесса?</tw-passagedata><tw-passagedata pid="6" name="пробилось" tags="rain" position="600,1000" size="100,100">Желания наблюдателя или ЗЕРНА не всегда могут влиять на некоторые обстоятельства - например [[дождь]].  В некоторых случаях могут определять процесс, когда наблюдатель теряет терпение и [[давит]] ЗЕРНО ногой.</tw-passagedata><tw-passagedata pid="7" name="давит" tags="" position="600,1200" size="100,100">&quot;Глубже и глубже и глубже и глубже. Слаще и слаще и слаще и слаще&quot;. (С)</tw-passagedata><tw-passagedata pid="8" name="дождь" tags="" position="1000,1100" size="100,100">Пошел ливень, ЗЕРНО было затоплено и начало [[тухнуть]]. ОНО было засажено глубоко в землю. Ему тепло и спокойно, хотя конец обычно расстраивает (?)</tw-passagedata><tw-passagedata pid="9" name="тухнуть" tags="" position="1000,1250" size="100,100">Стремление выжить - это дефолтный настрой живого? Возможно вы уверены, что ЗЕРНУ классно в предсмертном мирном состоянии. Кстати, где ОНО?
+&lt;img src=&quot;https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/microsoft/209/woman-shrugging_1f937-200d-2640-fe0f.png&quot; class=&quot;center object&quot; style=&quot; width:160%&quot;&gt;
+</tw-passagedata><tw-passagedata pid="9" name="тухнуть" tags="" position="1000,1250" size="100,100">Стремление выжить — это дефолтный настрой живого? Может быть, ЗЕРНУ классно в предсмертном мирном состоянии? Кстати, где ОНО?
 [[В космосе]]
 [[В земле]]
-[[В лаборатории?]]</tw-passagedata><tw-passagedata pid="10" name="В космосе" tags="" position="700,1400" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="В земле" tags="" position="900,1500" size="100,100">&lt;i&gt;По безлюдью смерть не ходит&lt;/i&gt;.
+[[В семенохранилище]]</tw-passagedata><tw-passagedata pid="10" name="В космосе" tags="" position="700,1400" size="100,100">&lt;iframe width=&quot;100%&quot; height=&quot;500px&quot; src=&quot;https://www.youtube.com/embed/9MfWARdoF-o?start=84&amp;autoplay=1&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+[[Ок...|длина]]</tw-passagedata><tw-passagedata pid="11" name="В земле" tags="" position="900,1500" size="100,100">&lt;i&gt;По безлюдью смерть не ходит&lt;/i&gt;.
 
-Солнце высушило влагу, ЗЕРНО продолжило созревание и рост. Вторым этапом органогенеза является появление отростков и начло кущения. Согласно наблюдениям, его [[длинна]] была 4,53 см. [[Срезать]] часть отростка и изучить под микроскопом - это даст что-то исследователю и возможно вернет надежду на возвращение к покою и смерти. </tw-passagedata><tw-passagedata pid="12" name="В лаборатории?" tags="" position="1100,1400" size="100,100">Всемирное семенохранилище на Шпицбергене - место безопасного хранения образцов семян. Находится на острове Шпицберген и представляет из себя тоннель, вырытый на глубине 130 метров. Собственный отсек в этом банке растений получила почти каждая страна. Создано для недопущения уничтожение образцов в результате возможных &quot;глобальных катастроф, таких как падение астероида, ядерная война или глобальное потепление&quot;. Найти ЗЕРНО можно здесь, только вы знаете какое оно.
-Ваша лаборатория находится в одном из залов хранилища. Она оснащена оборудованием, позволяющим почти точно имитировать естественные условия выращивания этого вида ЗЕРНА. Оно еще [[живо|В земле]]?</tw-passagedata><tw-passagedata pid="13" name="длинна" tags="" position="925,1650" size="100,100">Наблюдения длятся неделями, процессы идут [[нормально]].</tw-passagedata><tw-passagedata pid="14" name="Срезать" tags="" position="1075,1650" size="100,100">Почти белые жилки на ядовито-зеленом фоне. [[Взгляд|длинна]] прикован к системе стекол, но рост не остановлен.</tw-passagedata><tw-passagedata pid="15" name="нормально" tags="zenith" position="925,1800" size="100,100">Солнце в зените. ЗЕРНО находится под палящими лучами, ваша голова находится под палящими лучами. Чувствуется его [[власть]] над вами обоими. Можно [[одернуться]] и вспомнить, что эмоции и метафоры вокруг явления природы не являются частью проводимого наблюдения.</tw-passagedata><tw-passagedata pid="16" name="власть" tags="" position="850,1950" size="100,100">&lt;a href=&quot;https://books.google.ru/books?id=6WdkAAAAQBAJ&amp;pg=PT35&amp;dq=%D0%A1%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5+%D0%BC%D0%B8%D1%84%D1%8B&amp;hl=ru&amp;sa=X&amp;ved=0ahUKEwjWgcXv8Z7gAhWkiaYKHWO8AbgQ6AEIKTAA#v=onepage&amp;q=%D0%A1%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B8%D1%84%D1%8B&amp;f=falsev&quot;; target=&quot;_blank&quot;&gt;Солярные мифы&lt;/a&gt; появились не [[просто так|одернуться]].
+Солнце высушило влагу, ЗЕРНО продолжило созревание и рост. Вторым этапом органогенеза является появление отростков и начло кущения. Согласно наблюдениям, его [[длина]] была 4,53 см. Я [[срезаю|Срезать]] часть отростка и изучаю его под микроскопом. </tw-passagedata><tw-passagedata pid="12" name="В семенохранилище" tags="seedvault" position="1175,1400" size="100,100">&lt;p style=&quot;color:yellow&quot;&gt;Я проваливаюсь под промерзшую землю на 130 метров. Хуя, какая огромная кишка! Это всемирное семенохранилище на Шпицбергене. Собственный отсек в этом банке растений получила почти каждая страна.
 
-</tw-passagedata><tw-passagedata pid="17" name="одернуться" tags="" position="1000,1950" size="100,100">Участие солнца - это часть процесса, куда вписано ЗЕРНО, вы и еще почти бесконечность протекающих сейчас [[событий]].</tw-passagedata><tw-passagedata pid="18" name="событий" tags="" position="1000,2100" size="100,100">Приближаемся к необратимой развязке. Экстраординарная [[солнечная активность]], ощущение жара и духоты становятся частью наблюдения. Или [[не должны быть переоценены]]?</tw-passagedata><tw-passagedata pid="19" name="солнечная активность" tags="" position="925,2250" size="100,100">[[TOP 10 SONGS ABOUT SUN|https://www.google.com/search?q=top+10+somgs+about+sun&amp;oq=top+10+somgs+about+sun&amp;aqs=chrome..69i57j0l5.5803j0j1&amp;sourceid=chrome&amp;ie=UTF-8]]
+Найти ЗЕРНО можно здесь, только я знаю какое оно.
 
-[[...|подчиненное положение]]</tw-passagedata><tw-passagedata pid="20" name="не должны быть переоценены" tags="" position="1075,2250" size="100,100">Определение интересующих нас планет их расстоянием от Солнца/ поиск систем похожих на солнечную исключает ценность Земли как таковой и ставит ее в [[подчиненное положение]]. (добавить пдф).</tw-passagedata><tw-passagedata pid="21" name="подчиненное положение" tags="" position="1075,2400" size="100,100">Солнце - это вспышка, которая приковывает внимание и отвлекает нас от реальности. Все элемент наблюдения и само оно подчиняются этому скрытому процессу. Назовем его [[Судьбой Космической Системы (СКС)]].</tw-passagedata><tw-passagedata pid="22" name="Судьбой Космической Системы (СКС)" tags="" position="1075,2550" size="100,100">&lt;i&gt;На смерть, что на солнце; во все глаза не взглянешь&lt;/i&gt;.
+Моя лаборатория находится в одном из залов хранилища. Она оснащена оборудованием, позволяющим почти точно имитировать естественные условия роста этого вида ЗЕРНА. Оно еще [[живо|В земле]]?&lt;/p&gt;</tw-passagedata><tw-passagedata pid="13" name="длина" tags="" position="925,1650" size="100,100">Наблюдения длятся неделями, процессы идут [[нормально]].</tw-passagedata><tw-passagedata pid="14" name="Срезать" tags="" position="1100,1600" size="100,100">Почти белые жилки на ядовито-зеленом фоне. Мой [[взгляд|длина]] прикован к системе стекол, рост ЗЕРНА не остановлен.</tw-passagedata><tw-passagedata pid="15" name="нормально" tags="zenith" position="925,1800" size="100,100">&lt;p style=&quot;font-size:40px&quot;&gt;Солнце в зените. ЗЕРНО плавится под палящими лучами, моя голова плавится под палящими лучами. Я чувствую его [[власть]] над нами обоими. Можно [[одернуть себя]] и вспомнить, что эмоции и метафоры вокруг явления природы не являются частью проводимого наблюдения.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="16" name="власть" tags="" position="700,1950" size="100,100">&lt;a href=&quot;https://books.google.ru/books?id=6WdkAAAAQBAJ&amp;pg=PT35&amp;dq=%D0%A1%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5+%D0%BC%D0%B8%D1%84%D1%8B&amp;hl=ru&amp;sa=X&amp;ved=0ahUKEwjWgcXv8Z7gAhWkiaYKHWO8AbgQ6AEIKTAA#v=onepage&amp;q=%D0%A1%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B8%D1%84%D1%8B&amp;f=falsev&quot;; target=&quot;_blank&quot;&gt;Солярные мифы&lt;/a&gt; появились не [[просто так|одернуть себя]].
 
-Отросток из ЗЕРНА принимает огненную стрелу, пропускает через себя до самого корня и вспыхивает. Первый лист загорается через 0,9 секунды, второй через 1,1 секунды. Корня не видно, но прошло не более 2,5 секунд. Он первый [[впустил огонь]] и передал его дальше, как будто знал как он быстрее разойдется.</tw-passagedata><tw-passagedata pid="23" name="впустил огонь" tags="fire" position="1000,2700" size="100,100">Но чего человечество (мыслящая материя вообще) пережить не в состоянии, несмотря на всю свою власть над природой – какого бы уровня эта власть ни достигла, – это – противоположное холоду межмировых пространств состояние мировой материи – состояние, к которому эволюция миров приводит столь же неизбежно, как и к остыванию, – огненно-раскаленная «молодость» космической материи, состояние раскаленного газа молодой, рождающейся туманности – исходной точки нового космического цикла.
-Это огненно-парообразное состояние, в котором все элементы превращены в бешено вращающиеся вихри и где не может принципиально сохраниться никакая искусственно созданная граница, за которой мог бы спрятаться человек, никакая сколь угодно прочная и жароустойчивая «оболочка», отделяющая искусственную среду от остального, от «неочеловеченного» мира, – по-видимому, и оказывается тем абсолютным пределом, за которым уже невозможно существование [[мыслящей материи]].</tw-passagedata><tw-passagedata pid="24" name="мыслящей материи" tags="" position="1075,2850" size="100,100">fname: $fname
-</tw-passagedata><tw-passagedata pid="25" name="pre-start" tags="start" position="750,0" size="100,100">
+</tw-passagedata><tw-passagedata pid="17" name="одернуть себя" tags="" position="1100,1950" size="100,100">Участие солнца — это часть постоянно меняющейся логики, как и ЗЕРНО, и я, и еще почти бесконечность протекающих сейчас [[событий]].</tw-passagedata><tw-passagedata pid="18" name="событий" tags="" position="1000,2100" size="100,100">Я приближаюсь к необратимой развязке. Я забываю про зерно, со мной только ощущение жара и духоты. [[Как мне их оценить?|не должны быть переоценены]]</tw-passagedata><tw-passagedata pid="19" name="не должны быть переоценены" tags="" position="1075,2250" size="100,100">Определение интересующих нас планет их расстоянием от Солнца/ поиск систем похожих на солнечную исключает ценность Земли как таковой и ставит ее в [[подчиненное положение]].
+
+&lt;iframe src=&quot;https://arena-attachments.s3.amazonaws.com/77498/12830-solar_inferno_and_the.pdf?1360838343&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/whatsapp/238/overheated-face_1f975.png&quot; class=&quot;center object&quot; style=&quot; width:40%&quot;&gt;</tw-passagedata><tw-passagedata pid="20" name="подчиненное положение" tags="" position="1075,2400" size="100,100">Солнце — это вспышка, которая приковывает внимание и отвлекает меня от реальности. Все элементы наблюдения и само солнце подчиняются другому скрытому процессу. Назовем его [[Судьбой Космической Системы (СКС)]].</tw-passagedata><tw-passagedata pid="21" name="Судьбой Космической Системы (СКС)" tags="" position="1075,2550" size="100,100">&lt;i&gt;На смерть, что на солнце; во все глаза не взглянешь&lt;/i&gt;.
+
+Отросток из ЗЕРНА принимает огненную стрелу, пропускает через себя до самого корня и вспыхивает. Первый лист загорается через 0,9 секунды, второй через 1,1 секунды. Корня не видно, но прошло не более 2,5 секунд. Он первый [[впустил огонь]] и передал его дальше, как будто знал, как он быстрее разойдется.</tw-passagedata><tw-passagedata pid="22" name="впустил огонь" tags="fire" position="1000,2700" size="100,100">Но чего человечество (мыслящая материя вообще) пережить не в состоянии, несмотря на всю свою власть над природой – какого бы уровня эта власть ни достигла, – это – противоположное холоду межмировых пространств состояние мировой материи – состояние, к которому эволюция миров приводит столь же неизбежно, как и к остыванию, – огненно-раскаленная «молодость» космической материи, состояние раскаленного газа молодой, рождающейся туманности – исходной точки нового космического цикла.
+Это огненно-парообразное состояние, в котором все элементы превращены в бешено вращающиеся вихри и где не может принципиально сохраниться никакая искусственно созданная граница, за которой мог бы спрятаться человек, никакая сколь угодно прочная и жароустойчивая «оболочка», отделяющая искусственную среду от остального, от «неочеловеченного» мира, – по-видимому, и оказывается тем абсолютным пределом, за которым уже невозможно существование [[мыслящей материи]].
+</tw-passagedata><tw-passagedata pid="23" name="мыслящей материи" tags="" position="1075,2850" size="100,100">
+&lt;img id=&quot;textov&quot; src=&quot;https://vignette.wikia.nocookie.net/harrypotter/images/2/28/Fire_seed3.png/revision/latest/top-crop/width/360/height/450?cb=20130514220122&quot; class=&quot;center object&quot; style=&quot; width:20%&quot;&gt;
+&lt;iframe id=&quot;myVideo&quot; src=&quot;https://www.youtube.com/embed/8fZsPWvcY54?autoplay=1&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p id=&quot;textov&quot; style=&quot;text-align:center&quot;&gt;
+Странное путшествие.
+ЗЕРНО $fname лежит в моей ладони,
+СКС (Судьба космической системы) решится сама собой.
+Так, что там в дискорде у РБОБ?
+&lt;/p&gt;
+&lt;img id=&quot;myimage&quot; src=&quot;https://salesforce.publicissapient.com/wp-content/uploads/2016/07/large-white-page-desktop-background.jpg&quot;&gt;</tw-passagedata><tw-passagedata pid="24" name="pre-start" tags="start" position="750,0" size="100,100">
 &lt;img src=&quot;https://ds3-cinders.wdfiles.com/local--files/image-set-items:fire-seed/fire-seed.png&quot; class=&quot;center object&quot; style=&quot; width:20%&quot;&gt;
 
 &lt;p style=&quot;text-align:center&quot;&gt;Найдите любое [[зерно]].
@@ -234,7 +373,7 @@ if (typeof window.CustomScripts == "undefined") {
 {
 (track: &#39;heroic&#39;, &#39;loop&#39;, true)
 (track: &#39;heroic&#39;, &#39;playwhenpossible&#39;)
-}</tw-passagedata><tw-passagedata pid="26" name="зерно" tags="" position="750,150" size="100,100">&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;no-navigation&#39;)&lt;/script&gt;
+}</tw-passagedata><tw-passagedata pid="25" name="зерно" tags="" position="750,150" size="100,100">&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;no-navigation&#39;)&lt;/script&gt;
 &lt;img src=&quot;https://ds3-cinders.wdfiles.com/local--files/image-set-items:fire-seed/fire-seed.png&quot; class=&quot;center object&quot; style=&quot; width:20%&quot;&gt;
 
 
@@ -249,7 +388,7 @@ if (typeof window.CustomScripts == "undefined") {
 (click: &quot;24/06/2020 &quot;)[
 &lt;img src=&quot;https://raw.githubusercontent.com/rvbstr/firestate/master/img/burnt.png&quot; class=&quot;center&quot; style=&quot; width:20%&quot;&gt;]
 
-&lt;/p&gt;</tw-passagedata><tw-passagedata pid="27" name="hal.tracks" tags="veryspecial" position="1200,100" size="100,100">heroic: https://raw.githubusercontent.com/rvbstr/firestate/master/audio/heroic.mp3</tw-passagedata><tw-passagedata pid="28" name="Header" tags="header" position="1200,0" size="100,100">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="26" name="hal.tracks" tags="veryspecial" position="1200,100" size="100,100">heroic: https://raw.githubusercontent.com/rvbstr/firestate/master/audio/heroic.mp3</tw-passagedata><tw-passagedata pid="27" name="Header" tags="header" position="1200,0" size="100,100">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
 &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=UA-170270928-1&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
   window.dataLayer = window.dataLayer || [];
